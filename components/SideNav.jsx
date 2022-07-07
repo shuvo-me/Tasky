@@ -4,8 +4,12 @@ import {
 } from "@heroicons/react/outline";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const SideNav = () => {
+  const router = useRouter();
+
+  console.log(router)
   return (
     <div className="fixed top-0 left-0 min-h-screen bg-[#FFFFFF] max-w-[345px]  p-[40px]">
       <div className="sidenav-logo mb-[37px]">
@@ -15,7 +19,7 @@ const SideNav = () => {
         <ul>
           <li>
             <Link href="/">
-              <div className=" flex items-center cursor-pointer bg-slate-900 text-slate-50 py-[8px] px-[22px] rounded">
+              <div className={" flex items-center cursor-pointer bg-slate-900 text-slate-50 py-[8px] px-[22px] rounded"}>
                 <TemplateIcon className="h-5 mr-[15px]"/>
                 <span className="text-[18px]">Dashboard</span>
               </div>
