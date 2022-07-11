@@ -1,71 +1,40 @@
 import Logo from "@/assets/TASKY.svg";
-import {
-  TemplateIcon
-} from "@heroicons/react/outline";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import tabs from "@/assets/data/tabs";
 
 const SideNav = () => {
   const router = useRouter();
-
-  console.log(router)
   return (
-    <div className="fixed top-0 left-0 min-h-screen bg-[#FFFFFF] max-w-[345px]  p-[40px]">
+    <div className="fixed top-0 bottom-0  bg-[#FFFFFF] max-w-[345px]  py-[10px] px-[15px]">
       <div className="sidenav-logo mb-[37px]">
-        <Image height={54} width={132} src={Logo} />
+        <Image height={54} width={132} src={Logo} alt="Logo"/>
       </div>
       <div className="sidenav-links">
         <ul>
-          <li>
+          {tabs.map(tab=>(
+            <li key={Math.random()}>
             <Link href="/">
-              <div className={" flex items-center cursor-pointer bg-slate-900 text-slate-50 py-[8px] px-[22px] rounded"}>
-                <TemplateIcon className="h-5 mr-[15px]"/>
-                <span className="text-[18px]">Dashboard</span>
+              <div className={" flex items-center cursor-pointer text-slate-900 py-[8px] px-[22px] pl-[0px] rounded mb-5"}>
+                <span className={`${tab.icon} mr-4 text-[18px]`}></span>
+                <span className="text-[18px]">{tab.name}</span>
               </div>
             </Link>
           </li>
-          {/* <li>
-            <Link href="/">
-              <div>
-                <ChartPieIcon />
-                <span>Analytic</span>
-              </div>
-            </Link>
-          </li>
-          <li>
-            <Link href="/">
-              <div>
-                <ClockIcon />
-                <span>Timesheets</span>
-              </div>
-            </Link>
-          </li>
-          <li>
-            <Link href="/">
-              <div>
-                <ClipboardIcon />
-                <span>Todo</span>
-              </div>
-            </Link>
-          </li>
-          <li>
-            <Link href={"/"}>
-              <div>
-                <ClipboardCheckIcon />
-                <span>Report</span>
-              </div>
-            </Link>
-          </li>
-          <li>
-            <Link href={"/"}>
-              <div>
-                <CogIcon />
-                <span>Settings</span>
-              </div>
-            </Link>
-          </li> */}
+          ))}
+           <li className=" border border-slate-300 rounded px-[15px] py-[5px] relative">
+          <label htmlFor="workplace" className=" text-[12px] text-slate-400 font-normal mb-[4px]">WorkPlace</label>
+           <select name="workplace" id="workplace" className="w-full outline-none border-none bg-transparent text-sm">
+            <option value="">Matrix Domain</option>
+            <option value="">Matrix Domain 2</option>
+            <option value="">Matrix Domain 3</option>
+            <option value="">Matrix Domain 4</option>
+          </select>
+        </li>
         </ul>
+
+       
       </div>
     </div>
   );

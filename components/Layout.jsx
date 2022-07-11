@@ -1,14 +1,16 @@
-import Header from './Header'
-import SideNav from './SideNav'
+import Header from "./Header";
+import SideNav from "./SideNav";
 
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
   return (
     <>
-     <Header/>
-     {children}
-     <SideNav/>
+      <SideNav />
+      <div>
+        <Header />
+        <section className="page-content max-h-screen ml-[250px] pt-[70px] overflow-hidden">{children}</section>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
