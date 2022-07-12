@@ -7,7 +7,9 @@ const Layout = ({ children }) => {
       <SideNav />
       <div>
         <Header />
-        <section className="page-content max-h-screen ml-[250px] pt-[70px] overflow-hidden">{children}</section>
+        <section className="page-content max-h-screen ml-[250px] pt-[70px]">
+          {children}
+        </section>
       </div>
     </>
   );
