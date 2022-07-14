@@ -5,7 +5,7 @@ const Header = () => {
     <div className="flex items-center justify-between px-2 py-3 bg-white fixed top-0 left-[250px] right-0 z-50">
       <div className="left">
         <div className="menu cursor-pointer">
-          <span className="mdi mdi-menu text-[20px]"></span>
+          <span className="mdi mdi-menu text-[25px]"></span>
         </div>
       </div>
       <div className="right flex items-center">
@@ -20,7 +20,7 @@ const Header = () => {
           </div>
         </div>
         <div className="links flex items-center">
-          <div className="notifications relative mx-10 cursor-pointer cursor-pointer">
+          <div className="notifications relative mx-10 cursor-pointer">
             <span className="mdi mdi-bell text-[30px]"></span>
             <span className=" bg-yellow-400 h-[20px] w-[20px] top-0 right-0 absolute text-sm flex justify-center items-center rounded-full">
               4

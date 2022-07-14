@@ -6,6 +6,9 @@ import folder from "@/assets/folder.svg";
 import time from "@/assets/time.svg";
 import arrow from "@/assets/arrow.svg";
 import RecentActivity from "@/components/RecentActivity";
+import Projects from "@/components/Projects";
+import Members from "@/components/Members";
+import Todos from "@/components/Todos";
 let items = [
   {
     title: "Weekly Activity",
@@ -57,13 +60,17 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <div className="row-3 mt-10 grid grid-cols-2 gap-4">
+        <div className="row-3 mt-10 grid grid-cols-2 gap-4 grid-flow-dense">
           <div className="cards">
             <RecentActivity />
           </div>
           <div className="cards">
-            <RecentActivity />
+            <Projects />
           </div>
+        </div>
+        <div className="row-4 mt-5 grid grid-cols-2 gap-4">
+          <Members />
+          <Todos />
         </div>
       </div>
     </>
