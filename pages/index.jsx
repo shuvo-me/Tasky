@@ -43,7 +43,7 @@ export default function Home() {
           </div>
           <div className="timer bg-white flex items-center py-[30px] px-[20px] rounded-[20px]">
             <h5>Start Time Tracker</h5>
-            <div className="btn bg-yellow-300 flex justify-center items-center h-[40px] w-[40px] rounded-md ml-8 cursor-pointer">
+            <div className=" bg-yellow-300 flex justify-center items-center h-[40px] w-[40px] rounded-md ml-8 cursor-pointer">
               <Image src={icon} alt={"icon"} height={20} width={20} />
             </div>
           </div>

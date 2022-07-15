@@ -50,9 +50,7 @@ const Projects = () => {
           </div>
         ))}
         <div className=" text-right">
-          <button className=" bg-gray-800 text-slate-50 outline-none border-none rounded-lg py-2 px-5">
-            View More
-          </button>
+          <button className="btn">View More</button>
         </div>
       </div>
     </div>

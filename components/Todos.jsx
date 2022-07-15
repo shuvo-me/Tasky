@@ -5,7 +5,7 @@ const Todos = () => {
   return (
     <div className="card p-[20px] bg-white rounded-lg">
       <div className="card-top flex justify-between items-center mb-[30px]">
-        <h5 className=" font-bold">Members</h5>
+        <h5 className=" font-bold">To Dos</h5>
         <span className="mdi mdi-dots-vertical cursor-pointer"></span>
       </div>
       <div className="mid">
@@ -25,7 +25,7 @@ const Todos = () => {
           <tbody className=" mt-1">
             {[...Array(3)].map((_) => (
               <tr
-                className="border px-3 py-1 border-slate-100 rounded-lg flex justify-between items-center w-full my-4 first:mt-0"
+                className="border px-3 py-3 border-slate-100 rounded-lg flex justify-between items-center w-full my-4 first:mt-0"
                 key={Math.random()}
               >
                 <td>
@@ -36,7 +36,7 @@ const Todos = () => {
                     </div>
                   </div>
                 </td>
-                <td>
+                <td className=" flex items-center flex-1 ml-[40px]">
                   <span className=" bg-[#FFF8E8] text-sm font-medium px-4 rounded-lg py-2">
                     00:40:00
                   </span>
@@ -51,6 +51,9 @@ const Todos = () => {
             ))}
           </tbody>
         </table>
+        <div className=" text-right">
+          <button className="btn">View All</button>
+        </div>
       </div>
     </div>
   );
