@@ -2,30 +2,11 @@ import Head from "next/head";
 import Image from "next/image";
 import icon from "@/assets/play.svg";
 import Card from "@/components/Card";
-import folder from "@/assets/folder.svg";
-import time from "@/assets/time.svg";
-import arrow from "@/assets/arrow.svg";
 import RecentActivity from "@/components/RecentActivity";
 import Projects from "@/components/Projects";
 import Members from "@/components/Members";
 import Todos from "@/components/Todos";
-let items = [
-  {
-    title: "Weekly Activity",
-    icon: arrow,
-    percent: "90%",
-  },
-  {
-    title: "Worked This Week",
-    icon: time,
-    percent: "10hrs",
-  },
-  {
-    title: "Project Worked",
-    icon: folder,
-    percent: "07",
-  },
-];
+import items from "@/assets/data/card-items";
 export default function Home() {
   return (
     // [...Array(4)].map((u, i) => i)
@@ -43,7 +24,10 @@ export default function Home() {
           </div>
           <div className="timer bg-white flex items-center py-[30px] px-[20px] rounded-[20px]">
             <h5>Start Time Tracker</h5>
-            <div className=" bg-yellow-300 flex justify-center items-center h-[40px] w-[40px] rounded-md ml-8 cursor-pointer">
+            <div
+              id="start"
+              className=" bg-yellow-300 flex justify-center items-center h-[40px] w-[40px] rounded-md ml-8 cursor-pointer"
+            >
               <Image src={icon} alt={"icon"} height={20} width={20} />
             </div>
           </div>
