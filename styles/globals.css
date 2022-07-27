@@ -21,6 +21,10 @@ a {
   box-sizing: border-box;
 } */
 
-.btn{
+.btn {
   @apply bg-gray-800 text-slate-50 outline-none border-none rounded-lg py-2 px-5;
+}
+
+.hide-sidebar {
+  @apply transition translate-x-[-1000px] opacity-0 duration-75;
 }

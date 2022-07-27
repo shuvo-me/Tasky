@@ -1,10 +1,16 @@
-import Image from "next/image";
 import avatar from "@/assets/avatar.jpg";
+import { toggleSideNav } from "@/store/sideNav.slice.js";
+import Image from "next/image";
+import { useDispatch } from "react-redux";
 const Header = () => {
+  const dispatch = useDispatch();
   return (
     <div className="flex items-center justify-between px-2 py-3 bg-white fixed top-0 left-[250px] right-0 z-50">
       <div className="left">
-        <div className="menu cursor-pointer">
+        <div
+          className="menu cursor-pointer"
+          onClick={() => dispatch(toggleSideNav())}
+        >
           <span className="mdi mdi-menu text-[25px]"></span>
         </div>
       </div>
