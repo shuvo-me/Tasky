@@ -26,5 +26,9 @@ a {
 }
 
 .hide-sidebar {
-  @apply transition translate-x-[-1000px] opacity-0 duration-75;
+  @apply transition-all translate-x-[-1000px] opacity-0 duration-200 ease-linear;
+}
+
+.left-250 {
+  @apply left-[250px];
 }
