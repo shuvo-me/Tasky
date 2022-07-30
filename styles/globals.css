@@ -29,6 +29,10 @@ a {
   @apply transition-all translate-x-[-1000px] opacity-0 duration-200 ease-linear;
 }
 
-.left-250 {
-  @apply left-[250px];
+.left-240 {
+  @apply left-[240px];
+}
+
+.active-link {
+  @apply bg-slate-200 dark:bg-slate-700;
 }

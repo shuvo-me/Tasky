@@ -9,9 +9,9 @@ const Header = () => {
 
   return (
     <div
-      className={`flex items-center justify-between px-2 py-3 bg-white dark:bg-slate-800 fixed top-0 transition-all duration-200 ${
-        !sideNavState.show ? "left-250" : "left-0"
-      }  right-0 z-50`}
+      className={`flex items-center justify-between px-2 left-0 py-3 bg-white dark:bg-slate-800 fixed top-0 transition-all duration-200 ${
+        !sideNavState.show ? "lg:left-[240px]" : "left-0"
+      }  right-0 z-20`}
     >
       <div className="left flex items-center gap-[100px]">
         <div
@@ -20,7 +20,7 @@ const Header = () => {
         >
           <span className="mdi mdi-menu text-[25px] dark:text-slate-300"></span>
         </div>
-        <div className="search-box">
+        <div className="search-box xs:hidden md:block">
           <div className="bg-slate-50 dark:bg-slate-700 flex items-center px-2 rounded overflow-hidden">
             <input
               type="text"

@@ -8,8 +8,8 @@ const Layout = ({ children }) => {
     <>
       <SideNav />
       <main
-        className={`page-content  transition-all duration-200 ease-linear dark:bg-slate-800 ${
-          !sideNavState.show ? "ml-[250px]" : "ml-[0px]"
+        className={`page-content xs:ml-0 ${
+          !sideNavState.show ? "md:ml-[250px]" : "ml-[0px]"
         } pt-[70px]`}
       >
         <Header />
