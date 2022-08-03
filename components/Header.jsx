@@ -1,12 +1,17 @@
 import avatar from "@/assets/avatar.jpg";
+import notifications from "@/assets/data/notifications";
 import { toggleSideNav } from "@/store/sideNav.slice.js";
 import Image from "next/image";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import DarkModeToggleBtn from "./DarkModeToggleBtn";
 const Header = () => {
   const dispatch = useDispatch();
   const { sideNavState } = useSelector((state) => state);
-
+  const [showNotification, setShowNotification] = useState(false);
+  const openNotificationMenu = (e) => {
+    setShowNotification(!showNotification);
+  };
   return (
     <div
       className={`flex items-center justify-between px-2 left-0 py-3 bg-white dark:bg-slate-800 fixed top-0 transition-all duration-200 ${
@@ -37,11 +42,51 @@ const Header = () => {
         </div>
 
         <div className="links flex items-center">
-          <div className="notifications relative mx-10 cursor-pointer">
+          <div
+            className="notifications relative mx-10 cursor-pointer"
+            onClick={() => openNotificationMenu()}
+          >
             <span className="mdi mdi-bell text-[30px] dark:text-slate-300"></span>
             <span className=" bg-yellow-400 h-[20px] w-[20px] top-0 right-0 absolute text-sm flex justify-center items-center rounded-full">
               4
             </span>
+            <ul
+              className={` absolute top-[100%] transform left-[-600%] translate-x-[-50%] ${
+                showNotification
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-10 opacity-0 "
+              } transition-all ease-linear duration-300 left-[-350px] bg-slate-50 p-2 min-w-[320px] rounded-md dark:bg-slate-700`}
+            >
+              {notifications.map((item) => (
+                <li
+                  key={Math.random()}
+                  className="my-5 first:mt-0 last:mb-0 hover:bg-slate-100 dark:hover:bg-slate-600 p-3 rounded-md transition-all duration-200 ease-linear"
+                >
+                  <div className=" flex items-start">
+                    <a
+                      href="#"
+                      className="bg-yellow-200 p-2 rounded-full h-[30px] w-[30px] flex items-center"
+                    >
+                      <span className={`${item.icon} text-sm text-slate-700`} />
+                    </a>
+
+                    <div className="px-2">
+                      <h5 className=" text-sm text-slate-800 dark:text-slate-300">
+                        {item.title}
+                      </h5>
+                      <div>
+                        <span className=" text-xs text-slate-600 dark:text-slate-400">
+                          {item.time}
+                        </span>
+                        <p className=" text-xs truncate overflow-hidden text-slate-800 dark:text-slate-300">
+                          {item.message}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
           <div className="avatar flex items-center cursor-pointer">
             <div className="avatar-text text-right mr-3">
