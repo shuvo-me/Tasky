@@ -51,7 +51,7 @@ const Header = () => {
               4
             </span>
             <ul
-              className={` absolute top-[100%] transform left-[-550%] translate-x-[-50%] ${
+              className={` absolute top-[100%] transform   ${
                 showNotification
                   ? "translate-y-0 opacity-100"
                   : "translate-y-10 opacity-0 "
