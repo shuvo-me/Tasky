@@ -1,5 +1,6 @@
 import avatar from "@/assets/avatar.jpg";
 import notifications from "@/assets/data/notifications";
+import userInfo from "@/assets/data/userInfo";
 import { toggleSideNav } from "@/store/sideNav.slice.js";
 import Image from "next/image";
 import { useState } from "react";
@@ -9,8 +10,13 @@ const Header = () => {
   const dispatch = useDispatch();
   const { sideNavState } = useSelector((state) => state);
   const [showNotification, setShowNotification] = useState(false);
+  const [showUserInfo, setShowUserInfo] = useState(false);
   const openNotificationMenu = (e) => {
     setShowNotification(!showNotification);
+  };
+
+  const toggleUserInfo = () => {
+    setShowUserInfo(!showUserInfo);
   };
   return (
     <div
@@ -88,8 +94,11 @@ const Header = () => {
               ))}
             </ul>
           </div>
-          <div className="avatar flex items-center cursor-pointer">
-            <div className="avatar-text text-right mr-3">
+          <div
+            className="avatar flex items-center cursor-pointer relative"
+            onClick={toggleUserInfo}
+          >
+            <div v className="avatar-text text-right mr-3">
               <h5 className="dark:text-slate-300">John Doe</h5>
               <span className=" text-sm text-slate-300 dark:text-slate-600">
                 Frontend Developer
@@ -98,6 +107,29 @@ const Header = () => {
             <div className="avatar-img">
               <Image src={avatar} height={40} width={40} alt="avatar" />
             </div>
+            <ul
+              className={`transform duration-200 ease-linear transition-all${
+                showUserInfo
+                  ? "translate-y-0 opacity-100"
+                  : " translate-y-10 opacity-0 "
+              } absolute left-[-20px] top-[60px] min-w-[200px] bg-slate-50 p-2  rounded-md dark:bg-slate-700`}
+            >
+              {userInfo.map((item) => (
+                <li
+                  className="my-2 p-2 rounded-sm first:mt-0 last:mb-0 flex items-center hover:bg-slate-100 dark:hover:bg-slate-600"
+                  key={Math.random()}
+                >
+                  <div className="mr-[10px] h-[25px] w-[25px] flex items-center justify-center rounded-md border border-slate-200 dark:border-slate-600">
+                    <span
+                      className={`${item.icon} text-md dark:text-slate-300 text-slate-600`}
+                    />
+                  </div>
+                  <h5 className="text-sm text-slate-800 dark:text-slate-300">
+                    {item.text}
+                  </h5>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
