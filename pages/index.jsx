@@ -1,12 +1,11 @@
 import items from "@/assets/data/card-items";
-import icon from "@/assets/play.svg";
 import Card from "@/components/Card";
 import Members from "@/components/Members";
 import Projects from "@/components/Projects";
 import RecentActivity from "@/components/RecentActivity";
+import Timer from "@/components/Timer";
 import Todos from "@/components/Todos";
 import Head from "next/head";
-import Image from "next/image";
 export default function Home() {
   return (
     // [...Array(4)].map((u, i) => i)
@@ -26,15 +25,7 @@ export default function Home() {
               Mon 22, 2021 | 10:00 AM
             </span>
           </div>
-          <div className="timer bg-white flex items-center py-[30px] px-[20px] rounded-[20px] dark:border dark:border-slate-700 dark:bg-slate-800 text-slate-800 dark:text-slate-300">
-            <h5>Start Time Tracker</h5>
-            <div
-              id="start"
-              className=" bg-yellow-300 flex justify-center items-center h-[40px] w-[40px] rounded-md ml-8 cursor-pointer"
-            >
-              <Image src={icon} alt={"icon"} height={20} width={20} />
-            </div>
-          </div>
+          <Timer />
         </div>
         <div className="row-2 mt-10">
           <div className="cards grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4">

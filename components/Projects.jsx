@@ -1,5 +1,6 @@
 import icon from "@/assets/folder.svg";
 import Image from "next/image";
+import OptionDropDown from "./OptionDropDown";
 
 const items = [
   {
@@ -30,7 +31,7 @@ const Projects = () => {
         <h5 className=" font-bold dark:text-slate-400 text-slate-800">
           Projects
         </h5>
-        <span className="mdi mdi-dots-vertical cursor-pointer dark:text-slate-300 text-slate-700"></span>
+        <OptionDropDown />
       </div>
       <div className="body mt-5">
         {items.map((item) => (

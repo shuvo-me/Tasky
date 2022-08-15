@@ -1,5 +1,6 @@
 import folderIcon from "@/assets/folder.svg";
 import Image from "next/image";
+import OptionDropDown from "./OptionDropDown";
 const Todos = () => {
   return (
     <div className="card p-[20px] bg-white rounded-lg dark:border border-slate-700 dark:bg-slate-800">
@@ -7,7 +8,7 @@ const Todos = () => {
         <h5 className=" font-bold text-slate-800 dark:text-slate-400">
           To Dos
         </h5>
-        <span className="mdi mdi-dots-vertical cursor-pointer dark:text-slate-400"></span>
+        <OptionDropDown />
       </div>
       <div className="mid">
         <table className=" w-full text-left">

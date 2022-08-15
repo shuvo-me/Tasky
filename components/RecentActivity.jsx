@@ -5,6 +5,7 @@ import img3 from "@/assets/images/img3.png";
 import img4 from "@/assets/images/img4.png";
 import img5 from "@/assets/images/img5.png";
 import Image from "next/image";
+import OptionDropDown from "./OptionDropDown";
 
 const RecentActivity = () => {
   return (
@@ -13,7 +14,8 @@ const RecentActivity = () => {
         <h5 className=" font-bold text-slate-800 dark:text-slate-400">
           Recent Activity
         </h5>
-        <span className="mdi mdi-dots-vertical cursor-pointer text-slate-800 dark:text-slate-400"></span>
+
+        <OptionDropDown />
       </div>
       <div className="mid border border-slate-100 dark:border dark:border-slate-700 rounded-lg p-3 flex justify-between items-center">
         <div className="user flex items-center">
@@ -31,19 +33,49 @@ const RecentActivity = () => {
       <div className="body mt-5">
         <div className="images grid grid-cols-3 gap-2 ">
           <div className="img-1">
-            <Image src={img1} height={131} width={200} alt="img" />
+            <Image
+              src={img1}
+              height={131}
+              width={200}
+              layout="responsive"
+              alt="img"
+            />
           </div>
           <div className="img-1">
-            <Image src={img2} height={131} width={200} alt="img" />
+            <Image
+              src={img2}
+              height={131}
+              width={200}
+              alt="img"
+              layout="responsive"
+            />
           </div>
           <div className="img-1">
-            <Image src={img3} height={131} width={200} alt="img" />
+            <Image
+              src={img3}
+              height={131}
+              width={200}
+              alt="img"
+              layout="responsive"
+            />
           </div>
           <div className="img-1">
-            <Image src={img4} height={131} width={200} alt="img" />
+            <Image
+              src={img4}
+              height={131}
+              width={200}
+              alt="img"
+              layout="responsive"
+            />
           </div>
           <div className="img-1">
-            <Image src={img5} height={131} width={200} alt="img" />
+            <Image
+              src={img5}
+              height={131}
+              width={200}
+              alt="img"
+              layout="responsive"
+            />
           </div>
         </div>
       </div>

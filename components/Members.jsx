@@ -1,12 +1,13 @@
 import avatar from "@/assets/avatar.jpg";
 import Image from "next/image";
+import OptionDropDown from "./OptionDropDown";
 
 const Members = () => {
   return (
     <div className="card p-[20px] bg-white rounded-lg dark:border dark:bg-slate-800 dark:border-slate-700">
       <div className="card-top flex justify-between items-center mb-[30px] text-slate-800 dark:text-slate-400">
         <h5 className=" font-bold">Members</h5>
-        <span className="mdi mdi-dots-vertical cursor-pointer"></span>
+        <OptionDropDown />
       </div>
       <div className="mid">
         <table className=" w-full text-left">

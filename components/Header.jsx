@@ -42,7 +42,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="right flex items-center">
+      <div className="flex items-center">
         <div className="dark-mode-btn">
           <DarkModeToggleBtn />
         </div>
@@ -50,9 +50,9 @@ const Header = () => {
         <div className="links flex items-center">
           <div
             className="notifications relative mx-10 cursor-pointer"
-            onClick={() => openNotificationMenu()}
+            onClick={openNotificationMenu}
           >
-            <span className="mdi mdi-bell text-[30px] dark:text-slate-300"></span>
+            <span className="mdi mdi-bell text-[30px] dark:text-slate-300" />
             <span className=" bg-yellow-400 h-[20px] w-[20px] top-0 right-0 absolute text-sm flex justify-center items-center rounded-full">
               4
             </span>
@@ -60,7 +60,7 @@ const Header = () => {
               className={` absolute top-[100%] transform   ${
                 showNotification
                   ? "translate-y-0 opacity-100"
-                  : "translate-y-10 opacity-0 "
+                  : "translate-y-10 opacity-0 h-0 overflow-hidden"
               } transition-all ease-linear duration-300 left-[-350px] bg-slate-50 p-2 min-w-[320px] rounded-md dark:bg-slate-700`}
             >
               {notifications.map((item) => (
@@ -111,7 +111,7 @@ const Header = () => {
               className={`transform duration-200 ease-linear transition-all${
                 showUserInfo
                   ? "translate-y-0 opacity-100"
-                  : " translate-y-10 opacity-0 "
+                  : " translate-y-10 opacity-0 h-0 overflow-hidden "
               } absolute left-[-20px] top-[60px] min-w-[200px] bg-slate-50 p-2  rounded-md dark:bg-slate-700`}
             >
               {userInfo.map((item) => (
