@@ -6,9 +6,7 @@ const Card = ({ icon, title, percent }) => {
   return (
     <div className="card p-[20px] bg-white rounded-lg dark:border dark:border-slate-700 dark:bg-slate-800 ">
       <div className="card-top flex justify-between items-center mb-[30px]">
-        <h5 className=" font-bold text-slate-800 dark:text-slate-400">
-          {title}
-        </h5>
+        <h5 className="title">{title}</h5>
         <OptionDropDown />
       </div>
       <div className="card-body flex justify-between items-center">

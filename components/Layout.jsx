@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
         } pt-[70px]`}
       >
         <Header />
-        <section>{children}</section>
+        <section className="px-5 pt-6">{children}</section>
       </main>
     </>
   );

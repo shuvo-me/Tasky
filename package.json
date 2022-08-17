@@ -11,8 +11,10 @@
   "dependencies": {
     "@mdi/font": "^6.9.96",
     "@reduxjs/toolkit": "^1.8.3",
+    "apexcharts": "^3.35.4",
     "next": "12.2.0",
     "react": "18.2.0",
+    "react-apexcharts": "^1.4.0",
     "react-dom": "18.2.0",
     "react-redux": "^8.0.2",
     "react-spinner": "^0.2.7"

@@ -5,14 +5,14 @@ const tabs = [
     link: "/",
   },
   {
-    icon: "mdi mdi-notebook",
-    name: "Todo",
-    link: "/todo",
-  },
-  {
     icon: "mdi mdi-chart-pie",
     name: "Analytic",
     link: "/analytic",
+  },
+  {
+    icon: "mdi mdi-notebook",
+    name: "Todo",
+    link: "/todo",
   },
 ];
 
