@@ -98,7 +98,7 @@ const Header = () => {
             className="avatar flex items-center cursor-pointer relative"
             onClick={toggleUserInfo}
           >
-            <div v className="avatar-text text-right mr-3">
+            <div v className="avatar-text text-right mr-3 xs:hidden md:visible">
               <h5 className="dark:text-slate-300">John Doe</h5>
               <span className=" text-sm text-slate-300 dark:text-slate-600">
                 Frontend Developer
@@ -112,7 +112,7 @@ const Header = () => {
                 showUserInfo
                   ? "translate-y-0 opacity-100"
                   : " translate-y-10 opacity-0 h-0 overflow-hidden "
-              } absolute left-[-20px] top-[60px] min-w-[200px] bg-slate-50 p-2  rounded-md dark:bg-slate-700`}
+              } absolute left-[-160px] top-[60px] min-w-[200px] bg-slate-50 p-2  rounded-md dark:bg-slate-700`}
             >
               {userInfo.map((item) => (
                 <li

@@ -4,16 +4,18 @@ import SideNav from "./SideNav";
 
 const Layout = ({ children }) => {
   const { sideNavState } = useSelector((state) => state);
+
+  console.log({ sideNavState });
   return (
     <>
       <SideNav />
       <main
-        className={`page-content xs:ml-0 ${
-          !sideNavState.show ? "md:ml-[250px]" : "ml-[0px]"
-        } pt-[70px]`}
+        className={`page-content px-[30px] ${
+          !sideNavState.show ? "ml-[250px]" : "ml-[0px]"
+        } pt-[90px]`}
       >
         <Header />
-        <section className="px-5 pt-6">{children}</section>
+        <section>{children}</section>
       </main>
     </>
   );

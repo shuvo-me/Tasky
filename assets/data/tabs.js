@@ -9,11 +9,6 @@ const tabs = [
     name: "Analytic",
     link: "/analytic",
   },
-  {
-    icon: "mdi mdi-notebook",
-    name: "Todo",
-    link: "/todo",
-  },
 ];
 
 export default tabs;

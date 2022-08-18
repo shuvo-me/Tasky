@@ -9,8 +9,8 @@ module.exports = {
   ],
   theme: {
     screens: {
-      xs: "300px",
       ...defaultTheme.screens,
+      xs: "300px",
     },
   },
   plugins: [],
