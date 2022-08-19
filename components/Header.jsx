@@ -3,7 +3,7 @@ import notifications from "@/assets/data/notifications";
 import userInfo from "@/assets/data/userInfo";
 import { toggleSideNav } from "@/store/sideNav.slice.js";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import DarkModeToggleBtn from "./DarkModeToggleBtn";
 const Header = () => {
@@ -11,6 +11,8 @@ const Header = () => {
   const { sideNavState } = useSelector((state) => state);
   const [showNotification, setShowNotification] = useState(false);
   const [showUserInfo, setShowUserInfo] = useState(false);
+  const userMenuRef = useRef(null);
+  const notificationMenuRef = useRef(false);
   const openNotificationMenu = (e) => {
     setShowNotification(!showNotification);
   };
@@ -18,6 +20,16 @@ const Header = () => {
   const toggleUserInfo = () => {
     setShowUserInfo(!showUserInfo);
   };
+
+  const handleOutSideClick = (e) => {
+    !userMenuRef.current.contains(e.target) && setShowUserInfo(false);
+    !notificationMenuRef.current.contains(e.target) &&
+      setShowNotification(false);
+  };
+
+  useEffect(() => {
+    window.addEventListener("click", handleOutSideClick);
+  }, []);
   return (
     <div
       className={`flex items-center justify-between px-2 left-0 py-3 bg-white dark:bg-slate-800 fixed top-0 transition-all duration-200 ${
@@ -51,6 +63,7 @@ const Header = () => {
           <div
             className="notifications relative mx-10 cursor-pointer"
             onClick={openNotificationMenu}
+            ref={notificationMenuRef}
           >
             <span className="mdi mdi-bell text-[30px] dark:text-slate-300" />
             <span className=" bg-yellow-400 h-[20px] w-[20px] top-0 right-0 absolute text-sm flex justify-center items-center rounded-full">
@@ -97,6 +110,7 @@ const Header = () => {
           <div
             className="avatar flex items-center cursor-pointer relative"
             onClick={toggleUserInfo}
+            ref={userMenuRef}
           >
             <div v className="avatar-text text-right mr-3 xs:hidden md:visible">
               <h5 className="dark:text-slate-300">John Doe</h5>

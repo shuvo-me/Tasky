@@ -1,14 +1,25 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const OptionDropDown = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const menuRef = useRef(null);
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
+
+  const handleOutsideClick = (e) => {
+    !menuRef.current.contains(e.target) && setShowMenu(false);
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleOutsideClick);
+    console.log("happen");
+  }, []);
   return (
     <span
       className="mdi mdi-dots-vertical cursor-pointer text-slate-800 dark:text-slate-400 relative"
       onClick={() => toggleMenu()}
+      ref={menuRef}
     >
       <ul
         className={`${
